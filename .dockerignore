@@ -1,0 +1,30 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# C dependencies
+vendor/
+
+# IDEs
+.idea/
+.vscode/
+
+# Ignore Go mod and sum files as we are copying them explicitly
+go.mod
+go.sum
+
+# Ignore the build directory
+/build/
+
+# Ignore the .git directory
+.git/
+
+# Ignore the .env file (it will be copied explicitly)
+!.env
