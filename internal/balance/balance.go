@@ -6,12 +6,12 @@ import (
 	"getBlock/internal/getblock"
 )
 
-type BalanceChange struct {
+type Change struct {
 	Address string
 	Change  *big.Int
 }
 
-func CalculateBalanceChanges(blocks []getblock.Block) []BalanceChange {
+func CalculateBalanceChanges(blocks []getblock.Block) []Change {
 	balanceChanges := make(map[string]*big.Int)
 
 	for _, block := range blocks {
@@ -32,9 +32,9 @@ func CalculateBalanceChanges(blocks []getblock.Block) []BalanceChange {
 		}
 	}
 
-	changes := make([]BalanceChange, 0, len(balanceChanges))
+	changes := make([]Change, 0, len(balanceChanges))
 	for addr, change := range balanceChanges {
-		changes = append(changes, BalanceChange{
+		changes = append(changes, Change{
 			Address: addr,
 			Change:  change,
 		})
