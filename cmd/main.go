@@ -6,7 +6,10 @@ import (
 )
 
 func main() {
-	cfg := config.LoadConfig()
+	cfg, err := config.LoadConfig()
+	if err != nil {
+		panic(err)
+	}
 
 	srv := server.NewServer(&cfg)
 	srv.Run()
